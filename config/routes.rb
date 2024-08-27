@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
 
-  resources :url, only: %i[create show]
+  # resources :urls, only: %i[create show]
+  post "/url", to: "urls#create"
+  get "/url/:id", to: "urls#show"
+  get "/urls", to: "urls#index"
 end
